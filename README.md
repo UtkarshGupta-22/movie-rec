@@ -431,7 +431,7 @@ This project demonstrates practical experience in:
 
 ---
 
-# 👨‍💻 Author
+# Author
 
 ## Utkarsh Gupta
 
@@ -445,8 +445,7 @@ https://github.com/UtkarshGupta-22
 
 LinkedIn:
 
-Add your LinkedIn profile link here.
-
+https://www.linkedin.com/in/utkarsh-gupta-profile/
 ---
 
 # License
