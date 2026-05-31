@@ -1,108 +1,106 @@
 # Movie Recommender System
 
-An AI-powered full-stack Movie Recommendation Platform that combines content-based filtering, genre-based recommendations, TMDB integration, and an interactive modern user interface.
+![Python](https://img.shields.io/badge/Python-3.11-blue)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
+![Streamlit](https://img.shields.io/badge/Streamlit-Frontend-red)
+![Render](https://img.shields.io/badge/Render-Deployed-purple)
+![TMDB](https://img.shields.io/badge/TMDB-API-orange)
+![Status](https://img.shields.io/badge/Status-Live-success)
 
-The platform enables users to discover movies, search titles in real-time, explore detailed movie information, and receive intelligent recommendations using Natural Language Processing (TF-IDF) and genre similarity analysis.
+An AI-powered full-stack Movie Recommendation Platform that combines content-based filtering, genre-based recommendations, TMDB integration, and a modern interactive user experience.
+
+The system allows users to discover movies, search titles in real time, explore detailed movie information, and receive intelligent recommendations using TF-IDF and cosine similarity.
 
 ---
 
-## Live Deployment
+# Live Deployment
 
 ### Frontend (Streamlit)
 
 https://movie-rec-kj6vaxp3m6pgwvvwzmqver.streamlit.app/
 
-### Backend API (FastAPI + Render)
+### Backend (FastAPI + Render)
 
 https://movie-rec-e45h.onrender.com
 
-### API Documentation (Swagger UI)
+### API Documentation
 
 https://movie-rec-e45h.onrender.com/docs
 
 ---
 
-# Overview
+# Project Overview
 
-This project was designed and deployed as a complete production-ready movie recommendation platform.
+This project was built as a complete production-ready movie recommendation system demonstrating:
 
-The application combines:
-
-- Machine Learning
+- Machine Learning Integration
 - Recommendation Systems
 - FastAPI Backend Development
 - Streamlit Frontend Development
-- REST APIs
+- REST API Design
 - Cloud Deployment
-- TMDB API Integration
+- Third-Party API Integration
 
-The recommendation engine uses a hybrid strategy consisting of:
+The application combines:
 
-### 1. TF-IDF Content-Based Recommendations
+### TF-IDF Content-Based Recommendations
 
-Movies are recommended based on textual similarity using:
+Movies are recommended based on textual similarity.
 
-- Movie titles
-- Content descriptions
-- TF-IDF Vectorization
-- Cosine Similarity
+### Genre-Based Recommendations
 
-### 2. Genre-Based Recommendations
+Movies with similar genres are recommended as a secondary recommendation layer.
 
-Movies sharing similar genres are recommended as an additional recommendation layer.
+### TMDB Enrichment
 
-This hybrid approach improves recommendation coverage and user experience.
+All movie posters, metadata, backdrops, and discovery feeds are dynamically fetched using TMDB APIs.
 
 ---
 
 # Features
 
-## Home Feed
+## Dynamic Home Feed
 
-Browse dynamically generated movie collections:
+Browse movies across:
 
-- Trending Movies
-- Popular Movies
-- Top Rated Movies
+- Trending
+- Popular
+- Top Rated
 - Now Playing
-- Upcoming Movies
-
-All data is fetched directly from TMDB.
+- Upcoming
 
 ---
 
 ## Real-Time Movie Search
 
-Search movies using title keywords.
+Features:
 
-Features include:
-
-- Live Search
+- Dynamic Search
+- Keyword Matching
 - Autocomplete Suggestions
-- Dynamic Filtering
-- Poster Preview
 - TMDB Search Integration
+- Poster-Based Results
 
 Example:
 
 ```text
-Avenger
 Batman
 Thor
-Interstellar
+Avenger
 Spider-Man
+Interstellar
 ```
 
 ---
 
-## Detailed Movie Information
+## Detailed Movie Pages
 
-Each movie page displays:
+Each movie page contains:
 
-- Movie Poster
-- Backdrop Image
-- Release Date
+- Poster
+- Backdrop
 - Genres
+- Release Date
 - Overview
 - TMDB Metadata
 
@@ -110,7 +108,7 @@ Each movie page displays:
 
 ## TF-IDF Recommendation Engine
 
-The recommendation system uses:
+Uses:
 
 ```text
 TF-IDF Vectorization
@@ -118,149 +116,134 @@ TF-IDF Vectorization
 Cosine Similarity
 ```
 
-Pipeline:
+Workflow:
 
 ```text
 Selected Movie
       ↓
-Text Vectorization
+Vectorization
       ↓
 Cosine Similarity
       ↓
-Top Similar Movies
+Most Similar Movies
       ↓
-TMDB Enrichment
+TMDB Metadata Enrichment
       ↓
-Poster-Based Display
+Poster Recommendation Display
 ```
 
 ---
 
-## Genre Recommendation Engine
+## Genre Recommendations
 
-A secondary recommendation system generates movies belonging to similar genres.
+Additional recommendation layer based on movie genres.
 
 Benefits:
 
 - Better recommendation coverage
+- Improved movie discovery
 - Fallback recommendation support
-- Enhanced movie discovery
 
 ---
 
-## Fully Interactive Interface
+## Fully Cloud Deployed
 
-Features:
-
-- Responsive Layout
-- Sidebar Controls
-- Movie Cards
-- Poster-Based Navigation
-- Dynamic Recommendations
-- Query-Based Routing
-
----
-
-# System Architecture
+Frontend:
 
 ```text
-┌─────────────────────────┐
-│      User Browser       │
-└────────────┬────────────┘
-             │
-             ▼
-┌─────────────────────────┐
-│ Streamlit Frontend      │
-│ User Interface Layer    │
-└────────────┬────────────┘
-             │
-             │ REST API Calls
-             ▼
-┌─────────────────────────┐
-│ FastAPI Backend         │
-│ Recommendation Engine   │
-└────────────┬────────────┘
-             │
-             ▼
-┌─────────────────────────┐
-│ TF-IDF + Genre Logic    │
-└────────────┬────────────┘
-             │
-             ▼
-┌─────────────────────────┐
-│ TMDB API Integration    │
-└─────────────────────────┘
+Streamlit Community Cloud
+```
+
+Backend:
+
+```text
+Render
+```
+
+The application runs completely in the cloud and does not require local execution.
+
+---
+
+# Architecture
+
+```text
+User
+ │
+ ▼
+Streamlit Frontend
+ │
+ ▼
+FastAPI Backend
+ │
+ ├── TF-IDF Recommendation Engine
+ │
+ ├── Genre Recommendation Engine
+ │
+ └── TMDB API Integration
+ │
+ ▼
+Movie Recommendations
 ```
 
 ---
 
-# Recommendation Workflow
-
-```text
-User Selects Movie
-            │
-            ▼
-Fetch Movie Details
-            │
-            ▼
-Generate TF-IDF Recommendations
-            │
-            ▼
-Generate Genre Recommendations
-            │
-            ▼
-TMDB Metadata Enrichment
-            │
-            ▼
-Display Recommendations
-```
-
----
-
-# Technology Stack
+# Tech Stack
 
 ## Frontend
 
 - Streamlit
 - Requests
-- Python
-
----
 
 ## Backend
 
 - FastAPI
 - Uvicorn
 - HTTPX
-- Python
-
----
 
 ## Machine Learning
 
 - Scikit-Learn
 - TF-IDF Vectorizer
 - Cosine Similarity
+
+## Data Processing
+
 - Pandas
 - NumPy
 - SciPy
 
+## APIs
+
+- TMDB API
+
+## Deployment
+
+- Streamlit Cloud
+- Render
+
 ---
 
-## External APIs
+# Recommendation System
 
-### TMDB API
+The recommendation engine combines:
 
-Used for:
+## Content-Based Filtering
 
-- Movie Search
-- Posters
-- Backdrops
-- Metadata
-- Trending Movies
-- Popular Movies
-- Top Rated Movies
-- Upcoming Movies
+Uses TF-IDF vectorization on movie metadata and computes similarity using cosine similarity.
+
+## Genre-Based Filtering
+
+Identifies movies sharing similar genres.
+
+## Hybrid Recommendation Strategy
+
+```text
+TF-IDF Recommendations
+            +
+Genre Recommendations
+```
+
+This improves recommendation quality and coverage.
 
 ---
 
@@ -271,16 +254,13 @@ movie-rec/
 │
 ├── app.py
 ├── main.py
-├── requirements.txt
 ├── movies.pkl
 ├── similarity.pkl
-├── .env
+├── requirements.txt
+├── runtime.txt
+├── README.md
 │
-├── __pycache__/
-│
-└── deployment/
-    ├── Streamlit Cloud
-    └── Render
+└── __pycache__/
 ```
 
 ---
@@ -291,14 +271,6 @@ movie-rec/
 
 ```http
 GET /health
-```
-
-Response:
-
-```json
-{
-  "status": "ok"
-}
 ```
 
 ---
@@ -316,19 +288,9 @@ category
 limit
 ```
 
-Supported Categories:
-
-```text
-trending
-popular
-top_rated
-now_playing
-upcoming
-```
-
 ---
 
-## Search Movies
+## Movie Search
 
 ```http
 GET /tmdb/search
@@ -348,27 +310,12 @@ query
 GET /movie/id/{tmdb_id}
 ```
 
-Returns:
-
-- Poster
-- Backdrop
-- Genres
-- Release Date
-- Overview
-
 ---
 
 ## Genre Recommendations
 
 ```http
 GET /recommend/genre
-```
-
-Parameters:
-
-```text
-tmdb_id
-limit
 ```
 
 ---
@@ -379,16 +326,9 @@ limit
 GET /recommend/tfidf
 ```
 
-Parameters:
-
-```text
-title
-top_n
-```
-
 ---
 
-## Combined Recommendation Endpoint
+## Recommendation Bundle
 
 ```http
 GET /movie/search
@@ -404,36 +344,25 @@ TF-IDF Recommendations
 Genre Recommendations
 ```
 
-in a single API response.
-
 ---
 
-# ☁️ Deployment Architecture
+# Deployment
 
-## Frontend Deployment
+## Frontend
 
-Platform:
-
-```text
-Streamlit Community Cloud
-```
+Hosted on Streamlit Cloud.
 
 Responsibilities:
 
 - User Interface
 - Search Experience
 - Recommendation Display
-- Navigation
 
 ---
 
-## Backend Deployment
+## Backend
 
-Platform:
-
-```text
-Render
-```
+Hosted on Render.
 
 Responsibilities:
 
@@ -444,49 +373,45 @@ Responsibilities:
 
 ---
 
-# Performance Highlights
+# Screenshots
 
-- Full Cloud Deployment
-- FastAPI-Based Backend
-- Modular Architecture
-- TMDB Integration
-- Real-Time Search
-- Hybrid Recommendation Engine
-- Interactive Movie Exploration
-- Scalable API Design
-- Production-Ready Deployment
+## Home Feed
+
+Add screenshot here.
 
 ---
 
-# Future Enhancements
+## Search Results
 
-Planned improvements include:
+Add screenshot here.
 
-### User Features
+---
 
-- User Accounts
+## Movie Details
+
+Add screenshot here.
+
+---
+
+## Recommendations
+
+Add screenshot here.
+
+---
+
+# Future Improvements
+
+Planned enhancements:
+
+- User Authentication
 - Watchlists
-- Favorites
-- Recently Viewed Movies
-
-### Recommendation Improvements
-
+- Favorite Movies
 - Collaborative Filtering
 - Deep Learning Recommendations
-- Personalized User Preferences
-
-### Advanced Search
-
-- Actor Search
-- Director Search
-- Genre Filters
-- Year Filters
-
-### AI Integration
-
-- Natural Language Movie Search
-- AI Movie Assistant
-- LLM-Based Movie Suggestions
+- LLM-Powered Movie Assistant
+- Actor & Director Search
+- Personalized User Profiles
+- Recommendation Analytics
 
 ---
 
@@ -502,22 +427,25 @@ This project demonstrates practical experience in:
 - Streamlit Development
 - Cloud Deployment
 - API Integration
-- Data Processing
 - Production Systems
 
 ---
 
-# Author
+# 👨‍💻 Author
 
-### Utkarsh Gupta
+## Utkarsh Gupta
 
 B.Tech Computer Science (Data Science)
 
 PSIT Kanpur
 
-### GitHub
+GitHub:
 
 https://github.com/UtkarshGupta-22
+
+LinkedIn:
+
+Add your LinkedIn profile link here.
 
 ---
 
@@ -525,7 +453,7 @@ https://github.com/UtkarshGupta-22
 
 This project is intended for educational, research, and portfolio purposes.
 
-Movie metadata, posters, and related content are provided by TMDB and remain subject to TMDB licensing and usage policies.
+Movie metadata, posters, and related content are provided through TMDB APIs and remain subject to TMDB licensing policies.
 
 ---
 
@@ -538,6 +466,6 @@ Movie metadata, posters, and related content are provided by TMDB and remain sub
 | TMDB Integration | Operational |
 | Search System | Operational |
 | Recommendation Engine | Operational |
-| Swagger Documentation | Available |
+| API Documentation | Available |
 | Genre Recommendations | Operational |
 | TF-IDF Recommendations | Operational |
