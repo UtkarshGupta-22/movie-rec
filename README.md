@@ -1,4 +1,5 @@
-# Movie Recommender System
+# CineMatch AI
+An AI-Powered Movie Recommendation Platform
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue)
 ![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green)
